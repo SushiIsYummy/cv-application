@@ -1,0 +1,21 @@
+:root {
+  font-size: 16px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  background-color: rgb(236, 236, 236);
+}
+
+.app {
+  display: flex;
+  margin: auto;
+  max-width: 1300px;
+  gap: 20px;
+  padding: 20px;
+}

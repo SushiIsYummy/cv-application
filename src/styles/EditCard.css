@@ -1,0 +1,28 @@
+.edit-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 300px;
+  padding: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.edit-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-card form input {
+  padding: 7px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(236, 236, 236);
+  font-size: 1rem;
+}
+
+.edit-card form h1 {
+  font-size: 1.7rem;
+}

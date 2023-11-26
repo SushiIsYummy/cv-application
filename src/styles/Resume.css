@@ -1,0 +1,7 @@
+section.resume {
+  width: 100%;
+  max-width: calc(8.5 / 11 * (130vh - 40px));
+  min-width: 500px;
+  height: 130vh;
+  background-color: white;
+}

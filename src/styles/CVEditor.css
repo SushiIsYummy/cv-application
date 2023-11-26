@@ -1,0 +1,8 @@
+.cv-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-grow: 1;
+  max-width: 400px;
+  /* padding: 20px; */
+}
