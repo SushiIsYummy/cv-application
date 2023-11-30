@@ -1,0 +1,79 @@
+.edit-card-dropdown .expand-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  border: none;
+  text-align: start;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: white;
+  /* min-width: 300px; */
+  padding: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.edit-card-dropdown > :not(:first-child) {
+  border-radius: 0 0 10px 10px;
+}
+
+.edit-card-dropdown .expand-button.open {
+  border-radius: 10px 10px 0 0;
+}
+
+.edit-card-dropdown form {
+  display: none;
+}
+
+.edit-card-dropdown form.open {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+  padding: 0px 20px 20px 20px;
+}
+
+.edit-card-dropdown form.open > :nth-last-child(2) {
+  margin-bottom: 20px;
+}
+
+.edit-card-dropdown .item-list {
+  display: none;
+
+  /* width: 100%; */
+  /* padding: 10px; */
+  background-color: white;
+}
+
+.edit-card-dropdown .item-list > * {
+  margin: 0px 20px;
+}
+
+.edit-card-dropdown .item-list.open {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* width: 100%; */
+}
+
+.edit-card-dropdown .item-list .add-button {
+  align-self: center;
+  padding: 8px 18px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+
+.edit-card-dropdown form input {
+  padding: 7px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(236, 236, 236);
+  font-size: 1rem;
+}

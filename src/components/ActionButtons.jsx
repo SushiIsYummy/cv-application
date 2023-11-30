@@ -1,9 +1,17 @@
-function ActionButtons() {
+import '../styles/ActionButtons.css';
+
+function ActionButtons({
+  onDeleteButtonClick,
+  onCancelButtonClick,
+  onSaveButtonClick,
+}) {
   return (
     <div className="action-buttons">
-      <button className='delete-button'>Delete</button>
-      <button className='cancel-button'>Cancel</button>
-      <button className='save-button'>Save</button>
+      <button type='button' className='delete-button' onClick={onDeleteButtonClick}>DELETE</button>
+      <div className="cancel-save">
+        <button type='button' className='cancel-button' onClick={onCancelButtonClick}>CANCEL</button>
+        <button type='submit' className='save-button' onClick={onSaveButtonClick}>SAVE</button>
+      </div>
     </div>
   );
 }

@@ -1,11 +1,9 @@
 .personal-details .full-name {
   display: flex;
   gap: 10px;
-  width: 100%;
 }
 
-.personal-details .full-name .first-name,
-.personal-details .full-name .last-name {
-  flex: 1;
-  width: 100%;
+.personal-details .full-name .input-group {
+  /* flex: 1; */
+  /* width: 100%; */
 }

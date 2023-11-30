@@ -1,0 +1,13 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input-group h1 {
+  font-size: 1.2rem;
+}
+
+.input-group input {
+  width: 100%;
+}

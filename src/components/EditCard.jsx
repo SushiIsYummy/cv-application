@@ -1,7 +1,7 @@
 import '../styles/EditCard.css';
 // import ActionButtons from './ActionButtons';
 
-function EditCard({children, title, includeButtons}) {
+function EditCard({children, title}) {
   let titleClass = title.toLowerCase().split(' ').join('-');
   let myClassName = `edit-card ${titleClass}`;
   return (
@@ -10,7 +10,6 @@ function EditCard({children, title, includeButtons}) {
       <h1 className='title'>{title}</h1>
         {children}
       </form>
-      {/* {includeButtons && <ActionButtons></ActionButtons>} */}
     </section>
   );
 }

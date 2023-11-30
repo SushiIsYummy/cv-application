@@ -1,0 +1,13 @@
+.saved-item {
+  padding: 20px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.saved-item:hover {
+  filter: brightness(0.95);
+}

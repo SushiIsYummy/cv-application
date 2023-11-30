@@ -1,0 +1,22 @@
+.education-info {
+  margin: 0 10px 10px 10px;
+}
+
+.education-info .school-address {
+  display: flex;
+  justify-content: space-between;
+}
+
+.education-info .school-address .school {
+  font-weight: bold;
+}
+
+.education-info .degree-date-of-study {
+  display: flex;
+  justify-content: space-between;
+}
+
+.education-info .degree-date-of-study .date-of-study {
+  display: flex;
+  gap: 10px;
+}

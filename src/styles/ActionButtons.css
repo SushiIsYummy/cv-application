@@ -1,0 +1,29 @@
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-buttons .cancel-save {
+  display: flex;
+  gap: 10px;
+}
+
+.action-buttons button {
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: 1px solid rgb(214, 214, 214);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.action-buttons .save-button {
+  color: white;
+  background-color: #00bfff;
+  border: none;
+}
+
+.action-buttons .delete-button {
+  color: white;
+  background-color: red;
+  border: none;
+}
