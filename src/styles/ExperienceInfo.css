@@ -1,0 +1,30 @@
+.experience-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin: 0 10px 10px 10px;
+}
+
+.experience-info .position-title-employment-date {
+  display: flex;
+  justify-content: space-between;
+}
+.experience-info .company-name-location {
+  display: flex;
+  justify-content: space-between;
+  font-style: italic;
+}
+
+.experience-info .position-title {
+  font-weight: bold;
+}
+
+.experience-info .employment-date {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.experience-info .achievements {
+  margin: 0 0 0 35px;
+}

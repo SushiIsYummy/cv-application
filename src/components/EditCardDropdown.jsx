@@ -18,11 +18,16 @@ function EditCardDropdown({
   itemTitle,
   currentTargetId,
   setCurrentTargetId,
+  savedItemList,
+  setSavedItemList,
   loadDetails,
+  resumeWasCleared,
+  setResumeWasCleared,
+  
 }) {
   const [isActive, setActive] = useState(false);
   const [currentDisplay, setCurrentDisplay] = useState('list');
-  const [savedItemList, setSavedItemList] = useState([]);
+  
   const isList = currentDisplay === 'list';
   const isEdit = currentDisplay === 'edit';
   const propertyNames = Object.keys(itemPropertyNames);
@@ -30,10 +35,8 @@ function EditCardDropdown({
   useEffect(() => {
     let itemDetails = getItem(currentTargetId);
     if (itemDetails) {
-      let result = {school: ''};
-      console.log(propertyNames);
+      let result = {};
       propertyNames.forEach((propertyName) => {
-        console.log(propertyName)
         result[propertyName] = itemDetails[propertyName];
       })
       if (currentTargetId) {
@@ -42,21 +45,24 @@ function EditCardDropdown({
     }
   }, [currentTargetId]);
 
+  useEffect(() => {
+    if (resumeWasCleared === true) {
+      setCurrentDisplay('list');
+      setResumeWasCleared(false);
+    }
+  }, [resumeWasCleared])
+
   function handleActiveChange() {
     setActive(!isActive);
   }
 
   function handleAddButtonClick(e) {
-    let inputs = e.target.closest('.edit-card-dropdown').querySelectorAll('input');
+    let inputs = e.target.closest('.edit-card-dropdown').querySelectorAll('input, textarea');
     let result = {};
     let itemName = '';
     [...inputs].forEach((input) => {
       const { name, value } = input;
-      // const dataItemTitle = input.dataset.itemTitle;
-      // console.log(dataItemTitle);
-      // if (name === dataItemTitle) {
-        itemName = value;
-      // }
+      // itemName = value;
       result[name] = '';
     });
     let randomId = crypto.randomUUID();
@@ -80,7 +86,6 @@ function EditCardDropdown({
       saved: false,
       temp: true,
     }]);
-    console.log(savedItemList);
   }
   
   function handleDeleteClick() {
@@ -96,9 +101,6 @@ function EditCardDropdown({
 
   function handleCancelClick() {
     let savedItemIndex = savedItemList.findIndex((item) => item.id === currentTargetId);
-    console.log(savedItemList);
-    console.log(savedItemIndex);
-    console.log(savedItemList[savedItemIndex].saved);
     if (savedItemIndex !== -1 && savedItemList[savedItemIndex].temp) {
       removeItem(currentTargetId);
       setSavedItemList((prevData) => {
@@ -107,11 +109,6 @@ function EditCardDropdown({
         })
       })
     }
-    console.log(`current id: ${currentTargetId}`)
-    console.log('current item value:');
-    console.log(getItem(currentTargetId));
-    console.log('current saved item values:');
-    console.log(getSavedItem(currentTargetId));
     if (!isEqual(getItem(currentTargetId), getSavedItem(currentTargetId))) {
       updateItem(currentTargetId, getSavedItem(currentTargetId));
     }
@@ -119,7 +116,6 @@ function EditCardDropdown({
   }
 
   function handleSavedItemClick(e) {
-    console.log(`clicked button id: ${e.target.id})`);
     setCurrentTargetId(e.target.id);
     setCurrentDisplay('edit');
   }
@@ -130,10 +126,9 @@ function EditCardDropdown({
 
   function handleSaveClick(e) {
     e.preventDefault();
-    let inputs = e.target.querySelectorAll('input');
+    let inputs = e.target.querySelectorAll('input, textarea');
     let result = {};
     let itemName = '';
-    console.log(inputs);
     [...inputs].forEach((input) => {
       const { name, value } = input;
       if (name === itemTitle) {
@@ -141,7 +136,6 @@ function EditCardDropdown({
       }
       result[name] = value;
     })
-    console.log(result)
     updateItem(currentTargetId, result);
     // setInputFields(result);
     // let savedItemIndex = savedItemList.findIndex((item) => item.id === currentTargetId);
@@ -150,7 +144,6 @@ function EditCardDropdown({
         item.id === currentTargetId ? { ...item, ...result, title: itemName, saved: true, temp: false } : item
       )
     )
-    console.log(savedItemList);
     setCurrentDisplay('list');
     }
     

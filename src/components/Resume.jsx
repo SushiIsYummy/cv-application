@@ -1,14 +1,20 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import '../styles/Resume.css';
 import EducationInfo from './EducationInfo';
+import ExperienceInfo from './ExperienceInfo';
 
 function Resume({ 
   personalDetailsValues,
   educationDetails,
   onEducationDetailsChange,
   educations,
+
+  onExperienceDetailsChange,
+  experiences,
 }) {
-  const { firstName, lastName, email, phoneNumber } = personalDetailsValues;
+  const { firstName, lastName, email, phoneNumber, github, linkedin } = personalDetailsValues;
+  let contactInfo = [email, phoneNumber, github, linkedin];
+  contactInfo = contactInfo.filter((info) => info !== '');
   return (
     <section className="resume">
       <header>
@@ -17,9 +23,12 @@ function Resume({
         }
         {(email || phoneNumber) &&
           <div className="contact">
-            <p className='email'>{email}</p>
-            {email && phoneNumber && <span>|</span>}
-            <p className='phone-number'>{phoneNumber}</p>
+            {contactInfo.map((info, i) => 
+              <Fragment key={i}>
+                {i > 0 && <span>|</span>}
+                <p>{info}</p>
+              </Fragment>
+            )}
           </div>
         }
       </header>
@@ -28,25 +37,28 @@ function Resume({
           <section className='education-section'>
             <h1 className='title'>E<span>DUCATION</span></h1>
             {educations.map((item) => {
-              console.log(item);
               return (
               <EducationInfo
                 key={item.id} 
                 educationDetails={item}
                 onEducationDetailsChange={onEducationDetailsChange}
-                // currentTarget={true}
               />)
             })}
           </section>
         }
-        {/* {experienceItems.length > 0 &&
-          <section className="experience-info">
-            <h1 className='title'>Experience</h1>
-            {experienceItems.map((item) => {
-              return item;
+        {experiences.length > 0 &&
+          <section className='experience-section'>
+            <h1 className='title'>E<span>XPERIENCE</span></h1>
+            {experiences.map((item) => {
+              return (
+              <ExperienceInfo
+                key={item.id} 
+                experienceDetails={item}
+                onExperienceDetailsChange={onExperienceDetailsChange}
+              />)
             })}
           </section>
-        } */}
+        }
         
       </main>
     </section>

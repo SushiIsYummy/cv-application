@@ -1,7 +1,3 @@
-import '../styles/Education.css';
-import EditCard from './EditCard';
-import EditCardDropdown from './EditCardDropdown';
-import InputGroup from './InputGroup';
 import '../styles/EducationInfo.css'
 
 function EducationInfo({

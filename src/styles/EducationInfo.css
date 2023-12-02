@@ -14,6 +14,7 @@
 .education-info .degree-date-of-study {
   display: flex;
   justify-content: space-between;
+  font-style: italic;
 }
 
 .education-info .degree-date-of-study .date-of-study {

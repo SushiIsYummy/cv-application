@@ -13,6 +13,10 @@ function Education({
   setCurrentTargetId,
   onEducationDetailsChange,
   loadEducationDetails,
+  savedEducationItemList,
+  setSavedEducationItemList,
+  resumeWasCleared,
+  setResumeWasCleared,
  }) {
   // const educationPropertyNames = ['school', 'address', 'degree', 'startDate', 'endDate'];
   return (
@@ -27,13 +31,18 @@ function Education({
       itemPropertyNames={educationDetails}
       setCurrentTargetId={setCurrentTargetId}
       currentTargetId={currentTargetId}
-      // educationPropertyNames={educationPropertyNames}
+      savedItemList={savedEducationItemList}
+      setSavedItemList={setSavedEducationItemList}
+      resumeWasCleared={resumeWasCleared}
+      setResumeWasCleared={setResumeWasCleared}
     >
-      <InputGroup value={educationDetails.school} title='School' name='school' type='text' placeholder='School' onChange={onEducationDetailsChange} required={true}/>
-      <InputGroup value={educationDetails.address} title='Address' name='address' type='text' placeholder='Address' onChange={onEducationDetailsChange}/>
-      <InputGroup value={educationDetails.degree} title='Degree' name='degree' type='text' placeholder='Degree / Field of Study' onChange={onEducationDetailsChange}/>
-      <InputGroup value={educationDetails.startDate} title='Start Date' name='startDate' type='text' placeholder='Start Date' onChange={onEducationDetailsChange}/>
-      <InputGroup value={educationDetails.endDate} title='End Date' name='endDate' type='text' placeholder='End Date' onChange={onEducationDetailsChange}/>
+      <InputGroup value={educationDetails.school} title='School' name='school' type='text' placeholder='School' onChange={onEducationDetailsChange} inputElement='input' required={true}/>
+      <InputGroup value={educationDetails.address} title='Address' name='address' type='text' placeholder='Address' onChange={onEducationDetailsChange} inputElement='input'/>
+      <InputGroup value={educationDetails.degree} title='Degree' name='degree' type='text' placeholder='Degree / Field of Study' onChange={onEducationDetailsChange} inputElement='input'/>
+      <div className="date-of-study">
+        <InputGroup value={educationDetails.startDate} title='Start Date' name='startDate' type='text' placeholder='Start Date' onChange={onEducationDetailsChange} inputElement='input'/>
+        <InputGroup value={educationDetails.endDate} title='End Date' name='endDate' type='text' placeholder='End Date' onChange={onEducationDetailsChange} inputElement='input'/>
+      </div>
     </EditCardDropdown>
   );
 }

@@ -1,8 +1,10 @@
 section.resume {
-  width: 100%;
-  max-width: calc(8.5 / 11 * (130vh - 40px));
-  min-width: 500px;
-  height: 130vh;
+  /* width: 100%; */
+  /* width: calc(8.5 / 11 * (130vh - 40px)); */
+  /* height: 130vh; */
+  width: 950.45px;
+  height: 1230px;
+  /* min-width: 500px; */
   background-color: white;
 }
 
@@ -26,14 +28,16 @@ section.resume {
 }
 
 .resume main {
-  padding: 20px;
+  padding: 0 20px;
 }
 
-.resume main .education-section .title span {
+.resume main .education-section .title span,
+.resume main .experience-section .title span {
   font-size: 0.9rem;
 }
 
-.resume main .education-section .title {
+.resume main .education-section .title,
+.resume main .experience-section .title {
   margin-bottom: 5px;
   border-bottom: 1px solid black;
   padding: 3px 0;

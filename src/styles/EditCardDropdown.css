@@ -9,7 +9,6 @@
   font-size: 1.5rem;
   font-weight: bold;
   background-color: white;
-  /* min-width: 300px; */
   padding: 20px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 10px;
@@ -62,7 +61,8 @@
 .edit-card-dropdown .item-list .add-button {
   align-self: center;
   padding: 8px 18px;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
   border-radius: 20px;
   border: none;
   background-color: green;
@@ -70,10 +70,10 @@
   cursor: pointer;
 }
 
-.edit-card-dropdown form input {
+/* .edit-card-dropdown form input {
   padding: 7px;
   border-radius: 10px;
   border: none;
   background-color: rgb(236, 236, 236);
   font-size: 1rem;
-}
+} */
