@@ -3,7 +3,6 @@ import CVEditor from './components/CVEditor'
 import Resume from './components/Resume';
 import exampleData from './exampleData';
 import './styles/global.css';
-import './App.css'
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState(exampleData.personalDetails);
@@ -44,7 +43,6 @@ function App() {
 
   function handlePersonalDetailsChange(e) {
     const { name, value } = e.target;
-    console.log(e.target);
     setPersonalDetails((prevData) => ({
       ...prevData,
       [name]: value,
@@ -87,7 +85,6 @@ function App() {
   
   function handlePersonalDetailsChange(e) {
     const { name, value } = e.target;
-    console.log(e.target);
     setPersonalDetails((prevData) => ({
       ...prevData,
       [name]: value,
